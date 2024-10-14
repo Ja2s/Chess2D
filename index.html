@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu d'échecs en 2D</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+        /* Style pour créer le plateau d'échecs */
+        .chess-board {
+            width: 80vmin;  /* Ajuster la largeur en fonction de la fenêtre */
+            height: 80vmin; /* Ajuster la hauteur en fonction de la fenêtre */
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            margin: auto; /* Centrer le plateau d'échecs */
+        }
+
+        .chess-board div {
+            width: 100%; /* Les cases occuperont toute la largeur */
+            height: 100%; /* Les cases occuperont toute la hauteur */
+            transition: border 0.3s, box-shadow 0.3s; /* Transition pour un effet plus fluide */
+            position: relative; /* Position relative pour assurer le bon fonctionnement des bordures */
+            box-sizing: border-box; /* Inclure la bordure dans les dimensions */
+        }
+
+        /* Couleur des cases */
+        .white {
+            background-color: #f0d9b5;
+        }
+
+        .black {
+            background-color: #b58863;
+        }
+
+        /* Style des pièces */
+        .piece {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        /* Classe pour surligner les cases */
+        .highlight 
+		{
+            border: 5px solid rgba(255, 0, 217, 0.8); /* Bordure jaune */
+            box-shadow: 0 0 15px rgba(255, 0, 217, 0.5); /* Effet de lumière */
+        }
+    </style>
+</head>
+<body>
+    <h1>Jeu d'échecs en 2D</h1>
+    <div class="chess-board" id="chessBoard"></div>
+    <script src="script.js"></script>
+</body>
+</html>
